@@ -1,0 +1,15 @@
+﻿@using ReservationSystem.BL.ViewModels;
+@model List<TicketReadVM>;
+
+
+<a asp-action="Add">Add a new Ticket</a>
+@foreach (var item in Model)
+{
+        <p>@Html.Raw(item.titleMarkup)</p>
+
+        <p>@Html.Raw(item.descriptionMarkup)</p>
+
+        <p>@Html.Raw(item.severityMarkup)</p>
+
+        <hr>
+}

@@ -1,0 +1,33 @@
+﻿@using ReservationSystem.BL.ViewModels;
+@using ReservationSystem.DAL.Models;
+@model EditVM;
+
+<a asp-action="Index" >Back to list</a>
+<form asp-action="Edit" method="post">
+     
+
+    <div class="form-group">
+        <label asp-for="Id" hidden></label>
+        <input type="hidden" class="form-control" asp-for="Id" />
+    </div>
+
+
+     <div class="form-group">
+        <label asp-for="Title"></label>
+        <input class="" asp-for="Title" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input class="form-control" asp-for="Description" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Severity"></label>
+        <select asp-for="Severity" asp-items="Html.GetEnumSelectList<Severity>()"></select>
+    </div>
+
+     <button class="btn btn-secondary"> Submit </button>
+
+</form>
+

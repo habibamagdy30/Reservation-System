@@ -1,0 +1,38 @@
+﻿@using ReservationSystem.BL.ViewModels;
+@using ReservationSystem.DAL.Models;
+@model DeleteVM;
+
+<a asp-action="Index" >Back to list</a>
+
+
+<form asp-action="Delete" method="post">
+
+
+    <div class="form-group">
+        <label asp-for="Id" hidden></label>
+        <input type="hidden" class="form-control" asp-for="Id" />
+    </div>
+
+
+     <div class="form-group">
+        <label asp-for="Title"></label>
+        <input class="" asp-for="Title" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input class="form-control" asp-for="Description" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Severity"></label>
+        <select asp-for="Severity" asp-items="Html.GetEnumSelectList<Severity>()"></select>
+    </div>
+
+     <h2>ARE YOU SURE YOU WANT TO DELETE THIS TICKET?</h2>
+
+     <button  class="btn btn-secondary"> Delete </button>
+
+</form>
+
+
