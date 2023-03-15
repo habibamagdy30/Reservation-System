@@ -51,13 +51,18 @@ namespace ReservationSystem.MVC.Controllers
             {
                 View("TicketNotFound");
             }
-            var ticketVM = new EditVM
-            {
-                Id = ticketToEdit.Id,
-                Title= ticketToEdit.Title,
-                Description = ticketToEdit.Description,
-                Severity = ticketToEdit.Severity,
-            };
+            //TODO: Mappping should happen in BL
+            // you could add a new method called GetTickForEdit()
+            //
+            
+            // var ticketVM = new EditVM
+            // {
+            //     Id = ticketToEdit.Id,
+            //     Title= ticketToEdit.Title,
+            //     Description = ticketToEdit.Description,
+            //     Severity = ticketToEdit.Severity,
+            // };
+            var ticketVM = GetTickForEdit(int id)
             return View(ticketVM);
         }
 
@@ -75,7 +80,8 @@ namespace ReservationSystem.MVC.Controllers
         public IActionResult Delete(int id)
         {
             var ticketToDelete = _ticketsManager.Get(id);
-
+            //TODO: Mappping should happen in BL
+            // Just as EditVM
             var ticketVM = new DeleteVM
             {
                 Id = ticketToDelete.Id,

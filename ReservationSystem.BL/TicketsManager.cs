@@ -67,5 +67,17 @@ namespace ReservationSystem.BL
             _ticketsRepo.SaveChanges();
 
         }
+
+        public EditVM GetTickForEdit(int id)
+        {
+            var ticketToEdit = _ticketsRepo.Get(id);
+            return =  new EditVM
+            {
+                Id = ticketToEdit.Id,
+                Title= ticketToEdit.Title,
+                Description = ticketToEdit.Description,
+                Severity = ticketToEdit.Severity,
+            };
+        }
     }
 }

@@ -18,5 +18,6 @@ namespace ReservationSystem.BL
         void Remove(int id);
 
         void Edit(EditVM ticket);
+        EditVM GetTickForEdit(int id);
     }
 }
